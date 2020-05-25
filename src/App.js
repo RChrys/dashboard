@@ -32,13 +32,14 @@ class App extends Component {
             {!this.state.isLogged ? <Link to="/login">Login</Link> : <Link to="/logout">Logout</Link>}
           </Menu>
           <Switch>
+          <PrivateRoute path="/dashboard" isLogged={this.state.isLogged} component={Dashboard} />
+            <PrivateRoute path="/post/:id" isLogged={this.state.isLogged} component={Post} />
             <Route exact path="/" render={(props) => (<Home isLogged={this.state.isLogged} {...props} />)} />
 
             <Route path="/login" render={(props) => (<Login isLogged={this.state.isLogged} log={this.log} {...props} />)} />
             <Route path="/logout" render={(props) => (<Login isLogged={this.state.isLogged} log={this.log} {...props} />)} />
 
-            <PrivateRoute path="/dashboard" isLogged={this.state.isLogged} component={Dashboard} />
-            <PrivateRoute path="/post/:id" isLogged={this.state.isLogged} component={Post} />
+            
 
           </Switch>
         </Router>
