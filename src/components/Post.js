@@ -4,8 +4,9 @@ import datas from "./../datas/datas"
 class Post extends Component {
 
     render() {
-        const {params} = this.props.match
+        const {params} = this.props.computedMatch
        // const post = datas.filter(data => data.id === parseInt(params.id))
+      
         return(
             <div className="Post">
                 <h1>Post</h1>

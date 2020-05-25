@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React, {Component} from 'react'
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import Dashboard from "./components/Dashboard"
 import Menu from "./components/Menu"
 import Login from "./components/Login"
@@ -38,7 +38,7 @@ class App extends Component {
             <Route path="/logout" render={(props) => (<Login isLogged={this.state.isLogged} log={this.log} {...props} />)} />
 
             <PrivateRoute path="/dashboard" isLogged={this.state.isLogged} component={Dashboard} />
-            <PrivateRoute path="/post/:id" isLogged={this.state.isLogged} render={(props) => (<Post {...props} />)} />
+            <PrivateRoute path="/post/:id" isLogged={this.state.isLogged} component={Post} />
 
           </Switch>
         </Router>
