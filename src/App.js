@@ -38,7 +38,7 @@ class App extends Component {
             <Route path="/logout" render={(props) => (<Login isLogged={this.state.isLogged} log={this.log} {...props} />)} />
 
             <PrivateRoute path="/dashboard" isLogged={this.state.isLogged} component={Dashboard} />
-            <Route path="/post/:id" isLogged={this.state.isLogged} render={(props) => (<Post {...props} />)} />
+            <PrivateRoute path="/post/:id" isLogged={this.state.isLogged} render={(props) => (<Post {...props} />)} />
 
           </Switch>
         </Router>
