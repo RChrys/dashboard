@@ -7,8 +7,9 @@ class PrivateRoute extends Component {
         const Compo = this.props.component
         return(
             <Route
+                path={this.props.path}
                 render={ (rest) =>
-                this.props.isLogged ? <Compo path={this.props.path} { ...this.props } /> :
+                this.props.isLogged ? <Compo { ...this.props } /> :
                 <Redirect
                     to={{pathname : '/login', state : { from : "/"}}}
                 />
